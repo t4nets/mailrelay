@@ -2,10 +2,10 @@ version: '3'
 services:
   smtp:
     image: registry.gitlab.com/ix.ai/smtp@sha256:f67bbebb1bb1d3e0dceb2c31b5509ad58afc69d31c6308c2194bae3ae582b3ca
-    container_name: smtp
+    container_name: mailrelay
     restart: always
     ports:
-     - "25:25"
+     - "25025:25"
     environment:
      # # MUST start with : e.g RELAY_NETWORKS=:192.168.0.0/24:10.0.0.0/16
      # # if acting as a relay this or RELAY_DOMAINS must be filled out or incoming mail will be rejected
